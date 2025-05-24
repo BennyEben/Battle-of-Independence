@@ -1,4 +1,0 @@
-repository "Battle of Independence/Battle of Independence@18967885257024@cloud"
-  path "/"
-    br "/main"
-    co "/main"
