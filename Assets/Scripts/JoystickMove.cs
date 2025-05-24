@@ -21,6 +21,8 @@ public class JoystickMove : MonoBehaviour
     private bool canAct = true;
 
     public float actionCooldown = 0.5f; // jeda antar aksi
+    public Transform enemyTarget; // Referensi ke musuh
+
 
     private void Start()
     {
@@ -36,6 +38,9 @@ public class JoystickMove : MonoBehaviour
         if (!canAct || isJumping) return;
 
         Vector2 direction = movementJoystick.Direction;
+
+        // Pastikan player selalu menghadap musuh
+        FlipSprite();
 
         // 🔽 Ducking
         if (direction.magnitude > 0.5f && direction.y < -0.5f && Mathf.Abs(direction.x) < 0.4f)
@@ -148,6 +153,19 @@ public class JoystickMove : MonoBehaviour
         yield return new WaitForSeconds(actionCooldown);
         canAct = true;
     }
+
+    private void FlipSprite()
+    {
+        if (enemyTarget == null) return; // Pastikan musuh tersedia
+
+        Vector3 scale = transform.localScale;
+
+        // Player selalu menghadap ke musuh
+        scale.x = (transform.position.x < enemyTarget.position.x) ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
+
+        transform.localScale = scale;
+    }
+
 
     //  Fungsi ini dipanggil dari Button A
     public void Punch()
