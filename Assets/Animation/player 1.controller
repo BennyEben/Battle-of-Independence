@@ -39,7 +39,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: player_tangan_normal
-  m_Speed: 0.05
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5704702435529767422}
@@ -138,7 +138,7 @@ AnimatorStateMachine:
     m_Position: {x: 420, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6349756929215617891}
-    m_Position: {x: 370, y: -40, z: 0}
+    m_Position: {x: -100, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1065515524860458037}
     m_Position: {x: -120, y: 50, z: 0}
@@ -150,7 +150,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 180, y: -30, z: 0}
+  m_AnyStatePosition: {x: 190, y: -110, z: 0}
   m_EntryPosition: {x: 180, y: 110, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -362,7 +362,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: player_kaki_normal
-  m_Speed: 0.25
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8006591939874323514}
