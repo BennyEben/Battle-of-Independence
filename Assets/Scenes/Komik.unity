@@ -220,11 +220,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelKomik: {fileID: 0}
-  komikCerita10Nov: []
-  komikCeritaAmbarawa: []
-  komikCeritaBandungLautanApi: []
-  komikCeritaMedanArea: []
-  komikCerita1Maret1949: []
+  komikCerita10Nov:
+  - {fileID: 21300000, guid: 7380874f2f785a248806b6b2b5d17b82, type: 3}
+  - {fileID: 21300000, guid: 5f8bc8b09dfd7224c94fae4aa7ec1b37, type: 3}
+  - {fileID: 21300000, guid: 0bcda51f037269a4a98d1753ba54243f, type: 3}
+  - {fileID: 21300000, guid: dd9ab7005b798224b9e072e371aac896, type: 3}
+  - {fileID: 21300000, guid: 2d900df3e90896544894cdb8d3473a5d, type: 3}
+  - {fileID: 21300000, guid: 109940c339d490641b8a17230107100c, type: 3}
+  - {fileID: 21300000, guid: ed48a398335b64e42a117918aff6a388, type: 3}
+  - {fileID: 21300000, guid: ced9c7beacf60c046874ffe0373761e3, type: 3}
+  komikCeritaAmbarawa:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  komikCeritaBandungLautanApi:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  komikCeritaMedanArea:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  komikCerita1Maret1949:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &418281588
 GameObject:
   m_ObjectHideFlags: 0
