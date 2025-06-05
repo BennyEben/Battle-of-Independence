@@ -21,8 +21,12 @@ public class KomikLoader : MonoBehaviour
     void Start()
     {
         panelKomikRenderer = panelKomikObject.GetComponent<SpriteRenderer>();
-        ceritaDipilih = PlayerPrefs.GetString("ceritaDipilih","10Nov");
-        Debug.Log(PlayerPrefs.GetString("ceritaDipilih"));
+
+        // Ambil cerita & halaman yang terakhir dipilih (atau default)
+        ceritaDipilih = PlayerPrefs.GetString("ceritaDipilih", "10Nov");
+        index = PlayerPrefs.GetInt("halamanTerakhir", 0);
+
+        Debug.Log("Cerita: " + ceritaDipilih + " | Halaman: " + index);
 
         // Tentukan komik dan titik pindah scene berdasarkan cerita
         switch (ceritaDipilih)
@@ -30,7 +34,6 @@ public class KomikLoader : MonoBehaviour
             case "10Nov":
                 komikSekarang = komikCerita10Nov;
                 triggerHalaman = 5;
-                Debug.Log("10 Nov SET");
                 break;
             case "Ambarawa":
                 komikSekarang = komikCeritaAmbarawa;
@@ -50,15 +53,13 @@ public class KomikLoader : MonoBehaviour
                 break;
         }
 
-        TampilkanHalaman(0);
+        TampilkanHalaman(index);
     }
 
     public void TampilkanHalaman(int i)
     {
-        Debug.Log("Tampil");
         if (komikSekarang != null && i < komikSekarang.Length && panelKomikRenderer != null)
         {
-            Debug.Log("Start");
             index = i;
             panelKomikRenderer.sprite = komikSekarang[i];
         }
@@ -72,6 +73,11 @@ public class KomikLoader : MonoBehaviour
 
         if (nextIndex == triggerHalaman)
         {
+            // Simpan data sebelum pindah ke scene Fight
+            PlayerPrefs.SetString("ceritaDipilih", ceritaDipilih);
+            PlayerPrefs.SetInt("halamanTerakhir", nextIndex);
+            PlayerPrefs.Save();
+
             SceneManager.LoadScene("Fight");
             return;
         }
@@ -81,9 +87,9 @@ public class KomikLoader : MonoBehaviour
             TampilkanHalaman(nextIndex);
         }
     }
+
     void OnMouseDown()
     {
         HalamanBerikutnya();
     }
-
 }
