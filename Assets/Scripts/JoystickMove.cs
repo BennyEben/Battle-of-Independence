@@ -7,6 +7,9 @@ public class JoystickMove : MonoBehaviour
     public Joystick movementJoystick;
     public float playerSpeed = 5f;
     public float jumpForce = 75f;
+    public float actionCooldown = 1f; // jeda antar aksi
+    public Transform enemyTarget; // Referensi ke musuh
+
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -19,10 +22,6 @@ public class JoystickMove : MonoBehaviour
     private bool isDucking = false;
     private bool isJumping = false;
     private bool canAct = true;
-
-    public float actionCooldown = 0.5f; // jeda antar aksi
-    public Transform enemyTarget; // Referensi ke musuh
-
 
     private void Start()
     {
@@ -48,7 +47,7 @@ public class JoystickMove : MonoBehaviour
             if (!isDucking)
             {
                 isDucking = true;
-                StartCoroutine(ActionCooldown());
+
             }
             return;
         }
@@ -65,23 +64,25 @@ public class JoystickMove : MonoBehaviour
 
         if (direction.magnitude > 0.5f)
         {
+        
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             if (angle < 0) angle += 360f;
 
             if (angle >= 22.5f && angle < 67.5f)
             {
-                jumpDirection = new Vector2(1, 1).normalized;
+                jumpDirection = new Vector2(1, 2).normalized;
                 jumpPressed = true;
             }
             else if (angle >= 67.5f && angle < 112.5f)
             {
-                jumpDirection = Vector2.up;
+                jumpDirection = new Vector2(0, 2).normalized;
                 jumpPressed = true;
             }
             else if (angle >= 112.5f && angle < 157.5f)
             {
-                jumpDirection = new Vector2(-1, 1).normalized;
+                jumpDirection = new Vector2(-1, 2).normalized;
                 jumpPressed = true;
+
             }
             else if (direction.y < -0.5f && direction.x > 0.5f)
             {
@@ -90,11 +91,6 @@ public class JoystickMove : MonoBehaviour
             else if (direction.y < -0.5f && direction.x < -0.5f)
             {
                 jumpPressed = false;
-            }
-
-            if (jumpPressed)
-            {
-                StartCoroutine(ActionCooldown());
             }
         }
     }
@@ -166,28 +162,82 @@ public class JoystickMove : MonoBehaviour
         transform.localScale = scale;
     }
 
-
-    //  Fungsi ini dipanggil dari Button A
+    // Fungsi ini dipanggil dari Button A
+    // Fungsi ini dipanggil dari Tombol A
     public void Punch()
     {
-        if (!canAct || !isGrounded || isJumping || isDucking) return;
+        // Keluar jika cooldown masih aktif
+        if (!canAct) return;
 
-        Vector2 direction = movementJoystick.Direction;
-        if (Mathf.Abs(direction.x) > 0.1f) return; // Sedang jalan
+        // Cek apakah pemain ada di darat atau di udara
+        if (isGrounded)
+        {
+            // Cek apakah sedang jongkok (isDucking)
+            if (isDucking)
+            {
+                // INI KOMBO BARU KITA: Lakukan pukulan bawah
+                animator.SetTrigger("DuckPunch");
+                StartCoroutine(ActionCooldown());
+            }
+            else // Jika berdiri tegak
+            {
+                // Lakukan pukulan biasa
+                // Jangan pukul jika sedang bergerak
+                if (Mathf.Abs(movementJoystick.Direction.x) > 0.1f) return;
 
-        animator.SetTrigger("Punch");
-        StartCoroutine(ActionCooldown());
+                animator.SetTrigger("Punch");
+                StartCoroutine(ActionCooldown());
+            }
+        }
+        else // Jika di udara
+        {
+            // Lakukan serangan udara
+            animator.SetTrigger("JumpPunch");
+            StartCoroutine(ActionCooldown());
+        }
     }
-    // Fungsi ini dipanggil dari Button B
+
+    // Fungsi ini dipanggil dari Tombol B
     public void Kick()
     {
-        if (!canAct || !isGrounded || isJumping || isDucking) return;
+        // Keluar jika cooldown masih aktif
+        if (!canAct) return;
 
-        Vector2 direction = movementJoystick.Direction;
-        if (Mathf.Abs(direction.x) > 0.1f) return; // Sedang jalan
+        // Cek apakah pemain ada di darat atau di udara
+        if (isGrounded)
+        {
+            // Cek apakah sedang jongkok (isDucking)
+            if (isDucking)
+            {
+                // INI KOMBO BARU KITA: Lakukan tendangan bawah
+                animator.SetTrigger("DuckKick");
+                StartCoroutine(ActionCooldown());
+            }
+            else // Jika berdiri tegak
+            {
+                // Lakukan tendangan biasa
+                // Jangan tendang jika sedang bergerak
+                if (Mathf.Abs(movementJoystick.Direction.x) > 0.1f) return;
 
-        animator.SetTrigger("Kick");
+                animator.SetTrigger("Kick");
+                StartCoroutine(ActionCooldown());
+            }
+        }
+        else // Jika di udara
+        {
+            // Lakukan tendangan di udara
+            animator.SetTrigger("JumpKick");
+            StartCoroutine(ActionCooldown());
+        }
+    }
+    public void SpecialAttack()
+    {
+        if (!canAct || !isGrounded || isDucking || Mathf.Abs(movementJoystick.Direction.x) > 0.1f)
+        {
+            return; 
+        }
+        Debug.Log("SPECIAL ATTACK!"); // Pesan debug untuk memastikan fungsi terpanggil
+        animator.SetTrigger("SpesialAttack");
         StartCoroutine(ActionCooldown());
     }
-
 }

@@ -69,14 +69,31 @@ public class KomikLoader : MonoBehaviour
     {
         if (komikSekarang == null) return;
 
+        // --- AWAL PERUBAHAN ---
+
+        // Cek apakah halaman saat ini adalah halaman terakhir
+        if (index >= komikSekarang.Length - 1)
+        {
+            // Cerita sudah selesai. Hapus PlayerPrefs yang terkait.
+            Debug.Log("Cerita selesai. Menghapus PlayerPrefs.");
+            PlayerPrefs.DeleteKey("ceritaDipilih");
+            PlayerPrefs.DeleteKey("halamanTerakhir");
+            PlayerPrefs.Save(); // Pastikan perubahan disimpan
+
+            // Kembali ke menu utama atau scene lain setelah cerita selesai
+            // Ganti "MainMenu" dengan nama Scene menu utama Anda jika berbeda.
+            SceneManager.LoadScene("LevelSelection"); 
+            return;
+        }
+
+        // --- AKHIR PERUBAHAN ---
+
         int nextIndex = index + 1;
 
         if (nextIndex == triggerHalaman)
         {
             // Simpan data sebelum pindah ke scene Fight
-            PlayerPrefs.SetString("ceritaDipilih", ceritaDipilih);
-            PlayerPrefs.SetInt("halamanTerakhir", nextIndex);
-            PlayerPrefs.Save();
+            PlayerPrefs.DeleteAll();
 
             SceneManager.LoadScene("Fight");
             return;

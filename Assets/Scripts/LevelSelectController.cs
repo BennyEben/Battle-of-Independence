@@ -36,6 +36,10 @@ public class LevelSelectController : MonoBehaviour
             Debug.LogWarning("Pilih cerita dulu!");
         }
     }
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
 
 }

@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 8f88227bd1d09d7419ae35a61593dd9f
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: 4d22313ef83a4e44c99971df7a7d4a68
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: c702e5c486dffea46af70f5cddb68994
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 37a45d731ad107a4981649edcf73c64c, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4eb68487d34f1a64cbf635e7c898ab25, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 5712e99ec1fa1c944b3431ba9a87f089, type: 2}
