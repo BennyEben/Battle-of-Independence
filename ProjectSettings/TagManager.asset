@@ -7,8 +7,6 @@ TagManager:
   - pembatas
   - player
   - musuh
-  - bambu
-  - tendangan
   - pause
   layers:
   - Default
