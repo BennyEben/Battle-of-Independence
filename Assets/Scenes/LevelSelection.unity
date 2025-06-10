@@ -677,13 +677,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageSketch:
-  - {fileID: 21300000, guid: 9971c31f0a1103a43aa622f7e92d1681, type: 3}
+  - {fileID: 21300000, guid: 82d603d24d9e36b45b9a5c471f8633dc, type: 3}
   - {fileID: 21300000, guid: e85cc48b7a4b1714cb26921d4729783d, type: 3}
   - {fileID: 21300000, guid: 9e02ef413c263584c99e7f46f0a51b82, type: 3}
   - {fileID: 21300000, guid: b1ffc34eb8b23b946b40ca43aa34e4f2, type: 3}
   - {fileID: 21300000, guid: 8155e7e9cb2cd5c4aa24f3ee06bb67a0, type: 3}
   imageColor:
-  - {fileID: 21300000, guid: 82d603d24d9e36b45b9a5c471f8633dc, type: 3}
+  - {fileID: 21300000, guid: 9971c31f0a1103a43aa622f7e92d1681, type: 3}
   - {fileID: 21300000, guid: 66aa2babb2404e642a5511af6a233256, type: 3}
   - {fileID: 21300000, guid: 265dd6766dddc334c8f50fa0c0151e0e, type: 3}
   - {fileID: 21300000, guid: c1069be246d3dfc43b9bd736c533b0e8, type: 3}
