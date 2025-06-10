@@ -22,39 +22,21 @@ public class EnemyMovement : MonoBehaviour
 
     private List<string> animationList = new List<string>();
 
-    // Knockback system
-    public float knockbackForce = 5f;
-    public float knockbackDuration = 0.2f;
-    private float knockbackTimer;
-    private Vector2 knockbackDirection;
-    private bool isKnockedBack = false;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        // Ambil semua animasi dari Animator
         LoadAnimations();
+
+        // Pilih animasi secara acak dan jalankan
         PlayRandomAnimation();
     }
 
     private void Update()
     {
         animator.SetBool("isGrounded", isGrounded);
-
-        if (isKnockedBack)
-        {
-            // Apply knockback movement
-            transform.position += (Vector3)(knockbackDirection * knockbackForce * Time.deltaTime);
-            knockbackTimer -= Time.deltaTime;
-
-            if (knockbackTimer <= 0)
-            {
-                isKnockedBack = false;
-            }
-
-            return; // Jangan gerakkan enemy saat knockback
-        }
 
         if (!canAct || isJumping) return;
 
@@ -76,7 +58,7 @@ public class EnemyMovement : MonoBehaviour
         FlipSprite();
 
         // Lompat secara acak
-        if (Random.Range(0f, 1f) < 0.01f && isGrounded)
+        if (Random.Range(0f, 1f) < 0.01f && isGrounded) // 1% kemungkinan lompat setiap frame
         {
             Jump();
         }
@@ -84,6 +66,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Pastikan enemy tidak jatuh dari ground
         if (transform.position.y <= groundY)
         {
             isGrounded = true;
@@ -127,39 +110,20 @@ public class EnemyMovement : MonoBehaviour
 
     private void FlipSprite()
     {
-        if (playerTarget == null) return;
+        if (playerTarget == null) return; // Pastikan referensi Player tersedia
 
         Vector3 scale = transform.localScale;
 
+        // **Pastikan musuh selalu menghadap ke player**
         if (transform.position.x > playerTarget.position.x)
         {
-            scale.x = Mathf.Abs(scale.x) * -1;
+            scale.x = Mathf.Abs(scale.x) * -1; // Hadap kiri
         }
         else
         {
-            scale.x = Mathf.Abs(scale.x);
+            scale.x = Mathf.Abs(scale.x); // Hadap kanan
         }
 
         transform.localScale = scale;
-    }
-
-    public void GetKicked(Vector2 attackerPosition)
-    {
-        isKnockedBack = true;
-        knockbackTimer = knockbackDuration;
-
-        // Hit dari kanan = dorong ke kanan (karena player di kiri)
-        knockbackDirection = transform.position.x < attackerPosition.x ? Vector2.left : Vector2.right;
-
-        //animator.SetTrigger("enemy hurt"); // Optional: tambahkan animasi Hit
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("tendangan"))
-        {
-            Vector2 attackerPos = other.transform.position;
-            GetKicked(attackerPos);
-        }
     }
 }

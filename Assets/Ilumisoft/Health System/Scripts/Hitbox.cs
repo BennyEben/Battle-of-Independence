@@ -32,6 +32,5 @@ namespace Ilumisoft.HealthSystem
                 Health.ApplyDamage(damageAmount * damageMultiplier);
             }
         }
-
     }
 }
