@@ -9,6 +9,7 @@ public class JoystickMove : MonoBehaviour
     public float jumpForce = 75f;
     public float actionCooldown = 1f; // jeda antar aksi
     public Transform enemyTarget; // Referensi ke musuh
+    public GameObject kickHitboxPrefab;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -200,36 +201,53 @@ public class JoystickMove : MonoBehaviour
     // Fungsi ini dipanggil dari Tombol B
     public void Kick()
     {
-        // Keluar jika cooldown masih aktif
         if (!canAct) return;
 
-        // Cek apakah pemain ada di darat atau di udara
+        Vector3 offset = Vector3.zero;
+
         if (isGrounded)
         {
-            // Cek apakah sedang jongkok (isDucking)
             if (isDucking)
             {
-                // INI KOMBO BARU KITA: Lakukan tendangan bawah
                 animator.SetTrigger("DuckKick");
-                StartCoroutine(ActionCooldown());
+
+                // Offset untuk tendangan jongkok (belum diketahui, pakai placeholder X/Y)
+                offset = new Vector3(1.6f, 0.7f, 0f);
             }
-            else // Jika berdiri tegak
+            else
             {
-                // Lakukan tendangan biasa
-                // Jangan tendang jika sedang bergerak
                 if (Mathf.Abs(movementJoystick.Direction.x) > 0.1f) return;
 
                 animator.SetTrigger("Kick");
-                StartCoroutine(ActionCooldown());
+
+                // Offset untuk tendangan normal (sudah kamu tentukan)
+                offset = new Vector3(1.7f, 2.1f, 0f);
             }
         }
-        else // Jika di udara
+        else
         {
-            // Lakukan tendangan di udara
             animator.SetTrigger("JumpKick");
-            StartCoroutine(ActionCooldown());
+
+            // Offset untuk tendangan lompat (belum diketahui, pakai placeholder X/Y)
+            offset = new Vector3(1.7f, 3.1f, 0f);
         }
+
+        StartCoroutine(ActionCooldown());
+
+        // Balikkan offset.x jika menghadap kiri
+        if (transform.localScale.x < 0)
+        {
+            offset.x = -offset.x;
+        }
+
+        // Hitbox position = posisi player + offset
+        Vector3 spawnPos = transform.position + offset;
+
+        GameObject hitbox = Instantiate(kickHitboxPrefab, spawnPos, Quaternion.identity);
+        hitbox.transform.localScale = transform.localScale;
     }
+
+
     public void SpecialAttack()
     {
         if (!canAct || !isGrounded || isDucking || Mathf.Abs(movementJoystick.Direction.x) > 0.1f)
