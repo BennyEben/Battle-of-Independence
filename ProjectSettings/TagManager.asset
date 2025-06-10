@@ -7,6 +7,7 @@ TagManager:
   - pembatas
   - player
   - musuh
+  - pause
   layers:
   - Default
   - TransparentFX
