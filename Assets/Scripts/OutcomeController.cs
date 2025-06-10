@@ -71,8 +71,7 @@ public class OutcomeController : MonoBehaviour
 
     public void Exit()
     {
-        PlayerPrefs.DeleteKey("ceritaDipilih");
-        PlayerPrefs.DeleteKey("halamanTerakhir");
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("MainMenu");
     }
 

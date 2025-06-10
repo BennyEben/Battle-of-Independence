@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 156728273}
   - component: {fileID: 156728272}
   m_Layer: 0
-  m_Name: gambar
+  m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ RectTransform:
   m_GameObject: {fileID: 156728270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.38, y: 4.305723, z: 2.8306632}
+  m_LocalScale: {x: -3.38, y: -4.305723, z: -2.8306632}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1983347518}
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 134cd6d42f656ad429db64d7002ee015, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 200157944}
   - component: {fileID: 200157943}
   m_Layer: 0
-  m_Name: gambar
+  m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ RectTransform:
   m_GameObject: {fileID: 200157941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.38, y: 4.305723, z: 2.8306632}
+  m_LocalScale: {x: -3.38, y: -4.305723, z: -2.8306632}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 521580883}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 13bc3c5b1e8751c45b7139f7a557ea7d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -930,7 +930,7 @@ GameObject:
   - component: {fileID: 679565322}
   - component: {fileID: 679565321}
   m_Layer: 0
-  m_Name: gambar
+  m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -945,7 +945,7 @@ RectTransform:
   m_GameObject: {fileID: 679565319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.38, y: 4.305724, z: 2.8306632}
+  m_LocalScale: {x: -3.38, y: -4.305724, z: -2.8306632}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 312452161}
@@ -975,7 +975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b79d156e28445324fa808a90c4833d15, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 697109234}
   - component: {fileID: 697109233}
   m_Layer: 0
-  m_Name: gambar
+  m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1020,7 +1020,7 @@ RectTransform:
   m_GameObject: {fileID: 697109231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.38, y: 4.305723, z: 2.8306632}
+  m_LocalScale: {x: -3.38, y: -4.305723, z: -2.8306632}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1619239750}
@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0fd54519acf3b664ba054708455a130d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 1670324922}
   - component: {fileID: 1670324921}
   m_Layer: 0
-  m_Name: gambar
+  m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2047,7 +2047,7 @@ RectTransform:
   m_GameObject: {fileID: 1670324919}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.38, y: 4.305723, z: 2.8306632}
+  m_LocalScale: {x: -3.38, y: -4.305723, z: -2.8306632}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 412294357}
@@ -2077,7 +2077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3e934feab41506b4d9ba67a24b9bd00f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
