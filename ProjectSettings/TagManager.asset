@@ -9,6 +9,7 @@ TagManager:
   - musuh
   - bambu
   - tendangan
+  - pause
   layers:
   - Default
   - TransparentFX
