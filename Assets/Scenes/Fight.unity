@@ -2618,7 +2618,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
 --- !u!1 &1633044255
+=======
+--- !u!1 &1651670755
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2626,6 +2630,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1633044259}
   - component: {fileID: 1633044258}
   - component: {fileID: 1633044257}
@@ -2633,16 +2638,29 @@ GameObject:
   m_Layer: 5
   m_Name: Canvas - Pause
   m_TagString: pause
+=======
+  - component: {fileID: 1651670758}
+  - component: {fileID: 1651670757}
+  - component: {fileID: 1651670756}
+  m_Layer: 0
+  m_Name: background
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!114 &1633044256
+=======
+--- !u!114 &1651670756
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1633044255}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2656,10 +2674,27 @@ MonoBehaviour:
     m_Bits: 4294967295
 --- !u!114 &1633044257
 MonoBehaviour:
+=======
+  m_GameObject: {fileID: 1651670755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4792d2055071cb04d99cd95cb536ec43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allBackground:
+  - {fileID: 21300000, guid: fd75e9686458e3a43b1f4f88134f5ec8, type: 3}
+  - {fileID: 21300000, guid: 423d4ec341641cc4c99bdb010348304c, type: 3}
+  - {fileID: 21300000, guid: c700aeeb35cc4574f847e1237d87832a, type: 3}
+  - {fileID: 21300000, guid: 6b062571156fc2a4eb6a74cc74c62422, type: 3}
+  - {fileID: 21300000, guid: 30da279b1bc21f6439d12c26c295633b, type: 3}
+--- !u!212 &1651670757
+SpriteRenderer:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1633044255}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2702,10 +2737,61 @@ Canvas:
   m_TargetDisplay: 0
 --- !u!224 &1633044259
 RectTransform:
+=======
+  m_GameObject: {fileID: 1651670755}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1651670758
+Transform:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1633044255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2724,6 +2810,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+=======
+  m_GameObject: {fileID: 1651670755}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2788, y: 0.0781, z: 3}
+  m_LocalScale: {x: 19.350649, y: 8.079184, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1700347715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,5 +3580,6 @@ SceneRoots:
   - {fileID: 373836358}
   - {fileID: 621194894}
   - {fileID: 1312308703}
+  - {fileID: 1651670758}
   - {fileID: 598221932}
   - {fileID: 2134226725}
